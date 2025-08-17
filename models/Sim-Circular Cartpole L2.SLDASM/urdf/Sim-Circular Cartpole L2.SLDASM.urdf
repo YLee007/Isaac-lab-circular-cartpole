@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Sim-Circular Cartpole L2.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="2.19624296946261E-18 0.0326642091616594 0.000122090101760877"
+        rpy="0 0 0" />
+      <mass
+        value="0.409778207134298" />
+      <inertia
+        ixx="0.000328708745423522"
+        ixy="2.68735679678804E-20"
+        ixz="-7.36106350895342E-21"
+        iyy="0.00072201047906236"
+        iyz="-3.67008610700572E-07"
+        izz="0.000878189446080419" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fixed_pole">
+    <inertial>
+      <origin
+        xyz="1.17208920628325E-16 0.08 0.00949999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.132256413665709" />
+      <inertia
+        ixx="0.000435696040674517"
+        ixy="-4.40810062966925E-21"
+        ixz="-2.5410988417629E-22"
+        iyy="2.27781932139765E-05"
+        iyz="-2.6169466804403E-06"
+        izz="0.000453100268484959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/fixed_pole.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/fixed_pole.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_fixed"
+    type="continuous">
+    <origin
+      xyz="0 -0.027 0.04"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fixed_pole" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="flex_1_pole">
+    <inertial>
+      <origin
+        xyz="-2.80697133737223E-17 0.0799999999999999 0.0095"
+        rpy="0 0 0" />
+      <mass
+        value="0.132256413665709" />
+      <inertia
+        ixx="0.000435696040674517"
+        ixy="-4.94455482959698E-21"
+        ixz="-3.48060474756121E-22"
+        iyy="2.27781932139765E-05"
+        iyz="-2.6169466804403E-06"
+        izz="0.00045310026848496" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/flex_1_pole.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/flex_1_pole.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_to_flex_1"
+    type="continuous">
+    <origin
+      xyz="0 0.160000000000001 0.019"
+      rpy="0 0 0" />
+    <parent
+      link="fixed_pole" />
+    <child
+      link="flex_1_pole" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="flex_2_pole">
+    <inertial>
+      <origin
+        xyz="4.91682109906557E-20 0.0800000000000015 0.00949999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.132256413665709" />
+      <inertia
+        ixx="0.000435696040674516"
+        ixy="4.79632406382748E-21"
+        ixz="-1.42936809849163E-21"
+        iyy="2.27781932139765E-05"
+        iyz="-2.6169466804403E-06"
+        izz="0.000453100268484959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/flex_2_pole.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L2.SLDASM/meshes/flex_2_pole.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="flex_1_to_flex_2"
+    type="continuous">
+    <origin
+      xyz="0 0.16 0.019"
+      rpy="0 0 0" />
+    <parent
+      link="flex_1_pole" />
+    <child
+      link="flex_2_pole" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

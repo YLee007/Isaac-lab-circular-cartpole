@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Sim-Circular Cartpole L1.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="2.06705220655304E-18 0.0326642091616594 0.000122090101760878"
+        rpy="0 0 0" />
+      <mass
+        value="0.409778207134298" />
+      <inertia
+        ixx="0.000328708745423522"
+        ixy="3.34910128683046E-20"
+        ixz="-1.77759437422049E-21"
+        iyy="0.00072201047906236"
+        iyz="-3.67008610700569E-07"
+        izz="0.000878189446080419" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fixed_pole">
+    <inertial>
+      <origin
+        xyz="-3.15391603256759E-17 0.08 0.00949999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.132256413665709" />
+      <inertia
+        ixx="0.000435696040674517"
+        ixy="-6.89273060828187E-21"
+        ixz="-3.73011874390342E-22"
+        iyy="2.27781932139765E-05"
+        iyz="-2.6169466804403E-06"
+        izz="0.000453100268484959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/fixed_pole.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/fixed_pole.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_fixed"
+    type="continuous">
+    <origin
+      xyz="0 -0.027 0.04"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fixed_pole" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="flex_1_pole">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0.0800000000000002 0.0095"
+        rpy="0 0 0" />
+      <mass
+        value="0.132256413665709" />
+      <inertia
+        ixx="0.000435696040674517"
+        ixy="-4.94455482959698E-21"
+        ixz="-2.5410988417629E-22"
+        iyy="2.27781932139765E-05"
+        iyz="-2.6169466804403E-06"
+        izz="0.000453100268484959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/flex_1_pole.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 1 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sim-Circular Cartpole L1.SLDASM/meshes/flex_1_pole.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_to_flex_1"
+    type="continuous">
+    <origin
+      xyz="0 0.16 0.019"
+      rpy="0 0 0" />
+    <parent
+      link="fixed_pole" />
+    <child
+      link="flex_1_pole" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
