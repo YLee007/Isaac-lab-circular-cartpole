@@ -13,17 +13,17 @@ import math
 # Configuration
 ##
 
-l1_usd_path = os.path.join(
+l1_urdf_path = os.path.join(
     os.getcwd(),
-    "models/Sim-Circular Cartpole L1.SLDASM/urdf/Sim-Circular Cartpole L1.SLDASM/Sim-Circular Cartpole L1.SLDASM.usd",
+    "models/Sim-Circular Cartpole L1.SLDASM/urdf/Sim-Circular Cartpole L1.SLDASM.urdf",
 )
-l2_usd_path = os.path.join(
+l2_urdf_path = os.path.join(
     os.getcwd(),
-    "models/Sim-Circular Cartpole L2.SLDASM/urdf/Sim-Circular Cartpole L2.SLDASM/Sim-Circular Cartpole L2.SLDASM.usd",
+    "models/Sim-Circular Cartpole L2.SLDASM/urdf/Sim-Circular Cartpole L2.SLDASM.urdf",
 )
-l3_usd_path = os.path.join(
+l3_urdf_path = os.path.join(
     os.getcwd(),
-    "models/Sim-Circular Cartpole L3.SLDASM/urdf/Sim-Circular Cartpole L3.SLDASM/Sim-Circular Cartpole L3.SLDASM.usd",
+    "models/Sim-Circular Cartpole L3.SLDASM/urdf/Sim-Circular Cartpole L3.SLDASM.urdf",
 )
 
 upward_pos = (math.pi / 2, 0.0, 0.0)
@@ -31,8 +31,12 @@ downward_pos = (-math.pi / 2, 0.0, math.pi)
 joint_effort_scale = 10.0
 
 CIRCULAR_CARTPOLE_ROBOT_L1_CFG = ArticulationCfg(
-    spawn=sim_utils.UsdFileCfg(
-        usd_path=l1_usd_path,
+    spawn=sim_utils.UrdfFileCfg(
+        asset_path=l1_urdf_path,
+        fix_base=True,
+        joint_drive=sim_utils.UrdfConverterCfg.JointDriveCfg(
+            gains=sim_utils.UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0.0, damping=0.0)
+        ),
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             rigid_body_enabled=True,
             max_linear_velocity=1000.0,
@@ -72,8 +76,12 @@ CIRCULAR_CARTPOLE_ROBOT_L1_CFG = ArticulationCfg(
 
 
 CIRCULAR_CARTPOLE_ROBOT_L2_CFG = ArticulationCfg(
-    spawn=sim_utils.UsdFileCfg(
-        usd_path=l2_usd_path,
+    spawn=sim_utils.UrdfFileCfg(
+        asset_path=l2_urdf_path,
+        fix_base=True,
+        joint_drive=sim_utils.UrdfConverterCfg.JointDriveCfg(
+            gains=sim_utils.UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0.0, damping=0.0)
+        ),
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             rigid_body_enabled=True,
             max_linear_velocity=1000.0,
@@ -126,8 +134,12 @@ CIRCULAR_CARTPOLE_ROBOT_L2_CFG = ArticulationCfg(
 
 
 CIRCULAR_CARTPOLE_ROBOT_L3_CFG = ArticulationCfg(
-    spawn=sim_utils.UsdFileCfg(
-        usd_path=l3_usd_path,
+    spawn=sim_utils.UrdfFileCfg(
+        asset_path=l3_urdf_path,
+        fix_base=True,
+        joint_drive=sim_utils.UrdfConverterCfg.JointDriveCfg(
+            gains=sim_utils.UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0.0, damping=0.0)
+        ),
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             rigid_body_enabled=True,
             max_linear_velocity=1000.0,
